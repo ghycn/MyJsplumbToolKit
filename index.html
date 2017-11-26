@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>jsPlumb Toolkit</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_453583_z9yjvmzsllzestt9.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jsplumbtoolkit-defaults.css">
+    <link rel="stylesheet" href="css/jsplumbtoolkit-demo.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/ui.css">
+
+</head>
+
+<body style="overflow: hidden;">
+<div class="main">
+    <div class="header_">
+        <div class="toolbar" href="#" data-toggle="tooltip" data-placement="bottom" title="导出数据">
+            <i class="icon iconfont icon_tool icon-daochu"></i>
+        </div>
+        <div class="toolbar" href="#" data-toggle="tooltip" data-placement="bottom" title="进入/退出全屏">
+            <i class="icon iconfont icon_tool icon-quanping"></i>
+        </div>
+        <div>
+            <ul class="nav navbar-nav" >
+                <li class="dropdown">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-custom" data-toggle="dropdown">
+                        <div id="show_ico_arrow" class="ico ico_arrow rarrow_normal"></div> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-button" id="endarrow_list">
+                        <li arrow="normal"><div class="ico ico_selected"></div><div class="ico ico_arrow rarrow_normal"></div></li>
+                        <li arrow="solidarrow"><div class="ico ico_arrow rarrow_solidarrow"></div></li>
+                        <li arrow="soliddiamond"><div class="ico ico_arrow rarrow_soliddiamond"></div></li>
+                        <li arrow="solidcircle"><div class="ico ico_arrow rarrow_solidcircle"></div></li>
+                        <li arrow="cross"><div class="ico ico_arrow rarrow_cross"></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 图形区 -->
+    <script type="text/x-jtk-templates" src="templates.html"></script>
+    <script type="text/x-jtk-templates" src="database_templates.html"></script>
+    <div class="contenter_ jtk-demo-dbase" id="jtk-demo">
+        <div class="grid node-palette" style="width: 15%">
+            <div class="panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <i class="icon iconfont icon-arrfill_u-copy"></i>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            工作空间
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body ">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="#" class="link_model concept_model">概念模型</a></li>
+                            <li class="list-group-item"><a href="#" class="link_model uml_class_model">UML类图</a></li>
+                            <li class="list-group-item"><a href="#" class="link_model physical_model">物理模型</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 工作区 -->
+        <div id="uml_workplace" class="grid" style="width: 85%;">
+            <div class="jtk-demo-canvas">
+                <!-- 小工具 -->
+                <div class="controls">
+                    <i class="fa fa-arrows selected-mode" mode="pan" title="Pan Mode"></i>
+                    <i class="fa fa-pencil" mode="select" title="Select Mode"></i>
+                    <i class="fa fa-home" reset title="Zoom To Fit"></i>
+                </div>
+                <div class="draggable alert alert-info alert-dismissable uml_class_model_alert"
+                     style="position: absolute;display: none">
+                    <button type="button" class="close close_alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    <div class="row" style="margin-left: 10px;margin-right: -15px;margin-top: 15px;">
+                        <div class="col-md-3 uml_simple_class" data-toggle="popover">
+                            <img jtk-node-type="uml_simple_class" src="images/uml_simple_class.png">
+                        </div>
+                        <div class="col-md-3 uml_interface" data-toggle="popover">
+                            <img jtk-node-type="uml_interface" src="images/uml_interface.png">
+                        </div>
+                        <div class="col-md-3 uml_class" data-toggle="popover">
+                            <img jtk-node-type="uml_class" src="images/uml_class.png">
+                        </div>
+                        <div class="col-md-3 uml_active_class" data-toggle="popover">
+                            <img jtk-node-type="uml_active_class" src="images/uml_active_class.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="draggable alert alert-info alert-dismissable concept_model_alert"
+                     style="position: absolute;display: none">
+                    <button type="button" class="close close_alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    <div class="row" style="margin-left: 10px;">
+                        <div class="col-md-3 luoji1" data-toggle="popover">
+                            <img jtk-node-type="luoji1" src="images/luoji1.png">
+                        </div>
+                        <div class="col-md-3 luoji2" data-toggle="popover">
+                            <img jtk-node-type="luoji2" src="images/luoji2.png">
+                        </div>
+                        <div class="col-md-3 luoji3" data-toggle="popover">
+                            <img jtk-node-type="luoji3" src="images/luoji3.png">
+                        </div>
+                        <div class="col-md-3" data-toggle="popover">
+                        </div>
+                    </div>
+                </div>
+                <!-- 迷你视图 -->
+                <div class="miniview"></div>
+            </div>
+        </div>
+        <div id="database_workplace" class="grid" style="width: 85%;z-index: -1;">
+            <div class="jtk-database-canvas">
+                <div class="draggable alert alert-info alert-dismissable database_model_alert"
+                     style="position: absolute;display: none">
+                    <button type="button" class="close close_alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    <div class="row" style="margin-left: 10px;margin-right: -15px;margin-top: 15px;">
+                        <div class="col-md-3 table_model" data-toggle="popover">
+                            <img jtk-node-type="table" src="images/table.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- 小工具 -->
+                <div class="controls  database_controls">
+                    <i class="fa fa-arrows selected-mode" mode="pan" title="Pan Mode"></i>
+                    <i class="fa fa-pencil" mode="select" title="Select Mode"></i>
+                    <i class="fa fa-home" reset title="Zoom To Fit"></i>
+                </div>
+
+                <!-- 迷你视图 -->
+                <div class="miniview  database_miniview"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- the current dataset -->
+<div id="preData" class="jtk-demo-dataset" style="display:none;"></div>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jsplumbtoolkit.js"></script>
+<script src="js/context.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/syntax-highlighter.js"></script>
+<script src="js/jsPlumb/app.js"></script>
+<script src="js/jsPlumb/database_app.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jsPlumb/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!--简单类-->
+<script type="jtk" id="umlSimpleClass">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+                <svg:rect x="5" y="5"  width="${w-10}" height="${h-10}" rx="10" ry="10" />
+                <svg:text text-anchor="middle" width="${w}" height="${h}" x="${w/2}" y="${h/2}" dominant-baseline="central">${textHead}</svg:text>
+                <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <jtk-target port-type="target"/>
+        <jtk-source port-type="source" filter=".outer"/>
+    </div>
+</script>
+
+<script type="jtk" id="umlInterface">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+                <svg:rect x="5" y="5"  width="${w-10}" height="${h-10}" rx="10" ry="10"  />
+                <svg:line x1="5" y1="${h/4}" x2="${w-5}" y2="${h/4}" style="stroke:#000;stroke-width:2"/>
+                <svg:text text-anchor="middle" x="${w/2}" y="${h/8+5}" dominant-baseline="central">${textHead}</svg:text>
+                <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div contenteditable="true"  style="cursor: pointer;position: absolute;width: 80%;margin: auto;top:${h/4+10}px;bottom: 10px;right: 10px;left: 10px;">${textBody}</div>
+        <jtk-target port-type="target"/>
+        <jtk-source port-type="source" filter=".outer"/>
+    </div>
+</script>
+<!--接口-->
+
+<script type="jtk" id="umlClass">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+          <svg:svg width="${w}" height="${h}">
+                <svg:rect x="5" y="5"  width="${w-10}" height="${h-10}" rx="10" ry="10"  />
+                <svg:line x1="5" y1="30" x2="${w-5}" y2="30" style="stroke:#000;stroke-width:2"/>
+                <svg:line x1="5" y1="${(h-30)/2 + 30}" x2="${w-5}" y2="${(h-30)/2 + 30}" style="stroke:#000;stroke-width:2"/>
+                <svg:text text-anchor="middle" x="${w/2}" y="15" dominant-baseline="central">${textHead}</svg:text>
+                <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div contenteditable="true" style="position: relative;width: 80%;margin: auto;top:40px">${textAttr}</div>
+        <div contenteditable="true" style="position: relative;width: 80%;margin: auto;top:${(h-30)/2+20}px">${textMethod}</div>
+        <jtk-source port-type="source" filter=".outer"/>
+        <jtk-target port-type="target"/>
+    </div>
+</script>
+<!--类-->
+
+<script type="jtk" id="umlActiveClass">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+                <svg:rect x="5" y="5" width="${w-10}" height="${h-10}" rx="10" ry="10"  />
+                <svg:line x1="30" y1="5" x2="30" y2="${h-5}" style="stroke:#000;stroke-width:2"/>
+                <svg:line x1="${w-30}" y1="5" x2="${w-30}" y2="${h-5}" style="stroke:#000;stroke-width:2"/>
+                <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div style="position: relative;width: 65%;margin: auto;top:10px">${text}</div>
+        <jtk-source port-type="source" filter=".outer"/>
+        <jtk-target port-type="target"/>
+    </div>
+</script>
+<!--活动类-->
+
+<!--实体-->
+<script type="jtk" id="luoji1">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+                <svg:rect x="5" y="5" width="${w-10}" height="${h-10}"  />
+                <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div style="position: relative;width: 65%;margin: auto;top:10px">${text}</div>
+        <jtk-source port-type="source" filter=".outer"/>
+        <jtk-target port-type="target"/>
+    </div>
+</script>
+
+<!--关系-->
+<script type="jtk" id="luoji2">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+                  <svg:polygon x="5" y="5" points="${w/2},5 ${w-5},${h/2} ${w/2},${h-5}  5,${h/2}" />
+                  <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                  <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                  <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+                  <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div style="position: relative;width: 65%;margin: auto;top:${h/2-10}px">${text}</div>
+        <jtk-source port-type="source" filter=".outer"/>
+        <jtk-target port-type="target"/>
+    </div>
+</script>
+
+<!--键值属性-->
+<script type="jtk" id="luoji3">
+    <div style="left:${left}px;top:${top}px;width:${w}px;height:${h}px;" class="flowchart-object">
+        <div style="position:relative">
+            <svg:svg width="${w}" height="${h}">
+              <svg:ellipse x="5" y="5" cx="${w/2}" cy="${h/2}" rx="${w/2-5}" ry="${h/2-5}"/>
+              <svg:circle  cx="6" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+              <svg:circle  cx="${w-6}" cy="${h/2}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+              <svg:circle  cx="${w/2}" cy="6" r="5" stroke="black" stroke-width="1"  class="outer"/>
+              <svg:circle  cx="${w/2}" cy="${h-6}" r="5" stroke="black" stroke-width="1"  class="outer"/>
+            </svg:svg>
+        </div>
+        <div style="position: relative;width: 65%;margin: auto;top:${h/2-10}px">${text}</div>
+        <jtk-source port-type="source" filter=".outer"/>
+        <jtk-target port-type="target"/>
+    </div>
+</script>
+
+<!-- edit text (question or action or output or edge label) -->
+<script type="jtk" class="dlg" id="dlgText" title="编辑简单类">
+        <label>
+            <div class="form-labels-float">类名:</div>
+            <div class="pull-left">
+                 <input type="text" size="30" jtk-focus class="form-control" jtk-att="text" value="${text}" jtk-commit="true"/>
+            </div>
+        </label>
+</script>
+
+
+<script type="jtk" class="dlg" id="dlgText1" title="编辑接口">
+        <label>
+            <div class="form-labels-float">接口名称:</div>
+            <div class="pull-left">
+                 <input type="text" size="30" jtk-focus class="form-control" jtk-att="textHead" value="${textHead}" jtk-commit="true"/>
+            </div>
+        </label>
+        <div></div>
+        <label>
+            <div class="form-labels-float">接口内容:</div>
+            <div class="pull-left">
+                 <textarea rows="8" cols="70" jtk-att="textBody"   class="form-control"  jtk-commit="true">
+                        ${textBody}
+                 </textarea>
+            </div>
+        </label>
+</script>
+
+<script type="jtk" class="dlg" id="dlgText2" title="编辑类">
+        <label>
+            <div class="form-labels-float">类名:</div>
+            <div class="pull-left">
+                <input type="text" size="30"  jtk-focus class="form-control"  jtk-att="textHead" value="${textHead}" jtk-commit="true"/>
+            </div>
+        </label>
+        <div></div>
+         <label>
+            <div class="form-labels-float">属性:</div>
+            <div class="pull-left">
+               <textarea rows="6" cols="70" jtk-att="textAttr"   class="form-control"  jtk-commit="true">
+                   ${textAttr}
+               </textarea>
+            </div>
+        </label>
+        <div></div>
+        <label>
+            <div class="form-labels-float">方法:</div>
+            <div class="pull-left">
+               <textarea rows="6" cols="70" jtk-att="textMethod"   class="form-control"  jtk-commit="true">
+                   ${textMethod}
+               </textarea>
+            </div>
+        </label>
+</script>
+
+<script type="jtk" class="dlg" id="dlgText3" title="编辑接口">
+        <label>
+            <div class="form-labels-float">接口名称:</div>
+            <div class="pull-left">
+                 <input type="text" size="30" jtk-focus class="form-control" jtk-att="text" value="${text}" jtk-commit="true"/>
+            </div>
+        </label>
+</script>
+
+
+<script type="jtk" class="dlg" id="dlgConfirm" title="Please Confirm"  >
+    ${msg}
+</script>
+
+<script type="jtk" class="dlg" id="dlgMessage" title="Message" cancel="false">
+    ${msg}
+</script>
+

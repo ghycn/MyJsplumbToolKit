@@ -1,0 +1,105 @@
+
+
+/* ------------------------ dialogs ----------------------------*/
+
+/* ----------------------- drag/drop interactions -------------- */
+.drop-hover {
+    background-color: #FCCCCC !important;
+}
+
+/* ----------------------- node styles ------------------------- */
+
+.flowchart-object {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    z-index: 10;
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+.flowchart-object svg {
+    position: absolute;
+    stroke: black;
+    stroke-width: 2px;
+    fill: #fff;
+    left: 0px;
+    top: 0px;
+}
+
+.flowchart-object text {
+    stroke: none;
+    fill: #000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+
+.flowchart-object .node-action {
+    display: none;
+    position: absolute;
+    top: -24px;
+    cursor: pointer;
+    color: #000;
+    z-index: 10000;
+}
+
+.flowchart-object .drag-start {
+    cursor: pointer;
+}
+
+.flowchart-object .node-action:hover {
+    color: #ff8000;
+}
+
+.flowchart-object .node-edit {
+    left: 50%;
+    margin-left: -20px;
+}
+
+.flowchart-object .node-delete {
+    left: 50%;
+    margin-left: 10px;
+}
+.flowchart-object .node-add {
+    left: 50%;
+    margin-left: -50px;
+}
+
+.flowchart-object.jtk-surface-selected-element .node-action {
+    display: block;
+}
+
+.outer {
+    /*fill:gray;*/
+    /*opacity:0.3;*/
+    cursor:pointer;
+    stroke:#000;
+    fill:#FFF;
+    display: none;
+    /*stroke-width:2*/
+}
+
+.flowchart-object:hover .outer {
+    opacity:0.7;
+    display: block;
+}
+
+.inner {
+    cursor:move !important;
+    stroke-width: 0px;
+}
+
+.connection-drop svg {
+    fill:#CCC;
+}
+
+.connection-drop text {
+    fill:black;
+}

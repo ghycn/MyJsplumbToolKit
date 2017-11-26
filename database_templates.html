@@ -1,0 +1,193 @@
+
+<!-- table node type -->
+<script type="jtk" id="tmplTable">
+    <div class="table node">
+        <div class="name">
+            <div class="delete" title="Click to delete">
+                <i class="fa fa-times"/>
+            </div>
+            <span>${name}</span>
+            
+        </div>
+		<div class="columnsArea">
+			<ul class="table-columns">
+            	<r-each in="columns">
+               		<r-tmpl id="tmplColumn"/>
+            	</r-each>
+        	</ul>
+		</div>
+        
+    </div>
+</script>
+
+<!-- view node type -->
+<script type="jtk" id="tmplView">
+    <div class="view node">
+        <div class="name">
+            <div class="view-delete" title="Click to delete">
+                <i class="fa fa-times"/>
+            </div>
+            <span>${name}</span>
+            <div class="edit" title="Click to edit">
+                <i class="fa fa-pencil"/>
+            </div>
+        </div>
+        <div class="view-details">${query}</div>
+    </div>
+</script>
+
+<!-- table column template -->
+<script type="jtk" id="tmplColumn">
+    <li class="table-column table-column-type-integer" primary-key="${primaryKey}" data-port-id="${id}">
+		<!-- 
+        <div class="table-column-edit">
+            <i class="fa fa-pencil table-column-edit-icon"/>
+        </div>
+        <div class="table-column-delete">
+            <i class="fa fa-times table-column-delete-icon"/>
+        </div>
+		-->
+        <div>
+            <span style="margin-left: 5px;">${name} ${datatype}</span>
+        </div>
+        <!--
+            configure the li as an edge source, with a type of column, a scope derived from
+            the columns datatype, and a filter that prevents dragging new edges from the delete button or from the label.
+        -->
+        <jtk-source port-id="${id}" port-type="column" scope="${datatype}" filter=".table-column-delete, .table-column-delete-icon, span, .table-column-edit, .table-column-edit-icon" filter-exclude="true"/>
+        <!--
+            configure the li as an edge target, with a type of column, and a scope derived from the
+            column's datatype.
+        -->
+        <jtk-target port-id="${id}" port-type="column" scope="${datatype}"/>
+    </li>
+</script>
+
+<!-- edit relationship -->
+<script type="jtk" class="dlg" id="dlgRelationshipType" title="Edit Relationship">
+    <div class="db-cardinality">
+        <ul>
+            <li>
+                <label>
+                    <input type="radio" name="rType" value="1:1" jtk-focus jtk-att="type" checked/>
+                    1:1 - One to One
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="rType" value="1:N" jtk-att="type"/>
+                    1:N - One to Many
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="rType" value="N:M" jtk-att="type"/>
+                    N:M - Many to Many
+                </label>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<!-- edit column type and key details -->
+<script type="jtk" class="dlg" id="dlgColumnEdit" title="Edit Column">
+    <div class="db-column-type">
+
+        <label>
+            <div class="form-labels-float">字段名:</div>
+            <div class="pull-left"><input class="form-control" style="width:280px;" jtk-att="id" jtk-commit="true"/></div>
+            <div class="clearfix"/>
+        </label>
+        <br/>
+        <label>
+            <div class="form-labels-float">数据类型:</div>
+            <div class="pull-left">
+                <select class="selectpicker form-control"  style="width:280px;" jtk-att="datatype">
+                    <optgroup label="数字类型">
+                        <option value="INT">INT</option>
+                        <option value="BIGINT">BIGINT</option>
+                        <option value="INTEGER">INTEGER</option>
+                    </optgroup>
+                    <optgroup label="字符类型">
+                        <option value="CHAR">CHAR</option>
+                        <option value="TEXT">TEXT</option>
+                        <option value="VARCHAR">VARCHAR</option>
+                    </optgroup>
+                    <optgroup label="日期类型">
+                        <option value="DATE">DATE</option>
+                        <option value="TIME">TIME</option>
+                        <option value="DATETIME">DATETIME</option>
+                        <option value="TIMESTAMP">TIMESTAMP</option>
+                    </optgroup>
+                    <optgroup label="浮点类型">
+                        <option value="FLOAT">FLOAT</option>
+                        <option value="DOUBLE">DOUBLE</option>
+                        <option value="DECIMAL">DECIMAL</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="clearfix"/>
+        </label>
+        <br/>
+        <label>
+            <div class="form-labels-float">长度:</div>
+            <div class="pull-left"><input class="form-control" style="width:280px;" jtk-att="length" jtk-commit="true"/></div>
+            <div class="clearfix"/>
+        </label>
+         <br/>
+        <label>
+        <div class="form-labels-float">默认值:</div>
+            <div class="pull-left"><input class="form-control" style="width:280px;" jtk-att="default_value" jtk-commit="true"/></div>
+            <div class="clearfix"/>
+        </label>
+        <br/>
+        <label>
+            <div class="form-labels-float">字段描述:</div>
+            <div class="pull-left"><input class="form-control" style="width:280px;" jtk-att="column_comment" jtk-commit="true"/></div>
+            <div class="clearfix"/>
+        </label>
+        <br/>
+        <div>
+            <div class="form-labels-float">其他:</div>
+            <div class="pull-left" style="margin-top:6px;">
+                <input type="checkbox" class="" jtk-att="primaryKey"/>Primary Key
+                <br/>
+                <input type="checkbox" class="" jtk-att="nullable"/>Nullable
+                <br/>
+                <input type="checkbox" class="" jtk-att="index"/>Index
+                <br/>
+            </div>
+            <div class="clearfix"/>
+        </div>
+    </div>
+</script>
+
+<!-- edit view query -->
+<script type="jtk" class="dlg" id="dlgViewQuery" title="Edit Query">
+    <textarea class="txtViewQuery" jtk-focus jtk-att="query" jtk-commit="true"/>
+</script>
+
+<!-- edit name (table or view) -->
+<script type="jtk" class="dlg" id="dlgName" title="Enter Name">
+    <label>
+            <div class="form-labels-float">表名:</div>
+            <div class="pull-left"><input class="form-control" size="40" jtk-att="name"  jtk-commit="true"/></div>
+            <div class="clearfix"/>
+    </label>
+    <div></div>
+    <label>
+            <div class="form-labels-float">备注:</div>
+            <div class="pull-left"><input class="form-control" size="40" jtk-att="table_comment" jtk-commit="true"/></div>
+            <div class="clearfix"/>
+    </label>
+
+</script>
+
+<script type="jtk" class="dlg" id="dlgConfirm" title="请确认">
+    ${msg}?
+</script>
+
+<script type="jtk" class="dlg" id="dlgMessage" title="Message" cancel="false">
+    ${msg}
+</script>
+
