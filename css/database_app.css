@@ -1,0 +1,220 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/* --- Node common -------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
+
+.table, .view {
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    z-index: 11;
+    overflow: hidden;
+    min-width:80px;
+    min-height:30px;
+    width: auto;
+    border:2px solid #000;
+}
+
+.table .name, .view .name, .table li.jtk-draggable, .view li.jtk-draggable {
+    background-color: #fff;
+    color: #000;
+    cursor: move;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 6px;
+    text-align: center;
+}
+
+.columnsArea{
+	min-height:150px;
+	border-top:2px solid #000;
+}
+
+.table li.jtk-draggable, .view li.jtk-draggable {
+    min-width:100px;
+    border-radius:14px;
+}
+
+.table .name span, .view .name span {
+    cursor:pointer;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* --- Table nodes -------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
+
+
+.table {
+    margin-bottom: 0;
+    min-width: 200px;
+}
+
+.table-columns {
+    margin:0;
+    padding:0;
+}
+
+.table-column {
+    list-style-type: none;
+    padding: 4px 6px;
+}
+
+
+.table-column-delete, .view-delete {
+    color: #407364;
+    padding: 2px;
+    cursor: pointer;
+    float: left;
+    font-size: 10px;
+    line-height: 10px;
+    margin-left: 10px;
+}
+
+
+.table-column-edit {
+    color: #407364;
+    float: right;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.new-column, .delete, .table-column-delete {
+    -webkit-transition: background-color 0.15s ease-in;
+    -moz-transition: background-color 0.15s ease-in;
+    -o-transition: background-color 0.15s ease-in;
+    transition: background-color 0.15s ease-in;
+}
+
+.new-column:hover, .delete:hover {
+    color: #ff8000;
+}
+
+.table-column-delete:hover {
+    color: #434343;
+}
+
+.table-column-type-varchar {
+    background-color: #cbeae1;
+}
+
+.table-column-type-integer {
+    background-color: #fff;
+}
+
+.table-column-type-date {
+    background-color: #e5f5f0;
+}
+
+.table-column[primary-key='true'] {
+    background-color:#83b8a8;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* --- View nodes -------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
+
+.view {
+    margin-bottom: 0;
+    width: 200px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.view-details {
+    font-size: 10px;
+    font-family: Courier;
+    padding: 10px;
+}
+
+.view .view-delete {
+    color: #f7ebca;
+    padding: 2px;
+    cursor: pointer;
+    float:left;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.view .view-delete:hover {
+    color: #ff8000;
+}
+
+.txtViewQuery {
+    width: 272px;
+    height: 132px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* --- Drag/drop interactions ------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+.drop-hover {
+    background-color: #629f72 !important;
+    color: #FFF !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* --- Edge styles ------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
+
+.delete-relationship {
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.delete-relationship:hover {
+    color: #FFF;
+    background-color: #434343;
+    padding: 4px;
+}
+
+.common-edge path {
+    stroke-width: 3;
+    stroke: #f76258;
+}
+
+.common-edge.jtk-hover path {
+    stroke:#434343;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* --- dialogs ------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
+
+.form-labels-float {
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 6px;
+    padding-top: 6px;
+    font-size: 14px;
+    width: 80px;
+}
+
+.form-labels {
+    font-weight: bold;
+    text-align: left;
+    padding-right: 6px;
+    font-size: 14px;
+}
+
+.checkbox-id {
+    margin-top: 6px;
+    margin-left: 22px;
+}
+
+.btn-icon-margin {
+    line-height: 18px;
+    margin-left: 10px;
+}
+
+
+.pull-left { float: left; }
+.clearfix { clear: both; }
+
+.column-data-type{
+    margin-left: 30px;
+}
+

@@ -113,7 +113,7 @@ jsPlumbToolkit.ready(function() {
                     template: "tmplTable",
                     events: {
                         dblclick: function (params) {
-                        	// openTableWindows(jsPlumb,toolkit,params);
+                            // openTableWindows(jsPlumb,toolkit,params);
                         }
                     }
                 },
@@ -189,7 +189,7 @@ jsPlumbToolkit.ready(function() {
                     allowLoopback: false, // do not allow loopback connections from a port to itself.
                     allowNodeLoopback: false, // do not allow connections from this port to any other port on the same node.
                     events: {
-                    	dblclick: function (params) {
+                        dblclick: function (params) {
                             console.log(params);
                         }
                     }
@@ -499,24 +499,24 @@ jsPlumbToolkit.ready(function() {
             localStorage.setItem("jkt-database", JSON.stringify(data));
         });
     }
-    
+
     //点击导出SQL按钮,整合sql的合集。显示出来
     $('.icon-sqlscript').click(function(){
-    	var allSql = "";
-    	var nodes = toolkit.getNodes();
-    	for(var i=0 ; i<nodes.length ; i++){
-    		allSql = allSql+(nodes[i].data.sql==null?"":nodes[i].data.sql);
-    	}
-    	layer.open({
-          title: 'SQL内容',
-          shadeClose: false,
-          shade: 0.6,
-          area: ['60%', '65%'],
-          closeBtn: 1,
-          content: allSql
-      });
+        var allSql = "";
+        var nodes = toolkit.getNodes();
+        for(var i=0 ; i<nodes.length ; i++){
+            allSql = allSql+(nodes[i].data.sql==null?"":nodes[i].data.sql);
+        }
+        layer.open({
+            title: 'SQL内容',
+            shadeClose: false,
+            shade: 0.6,
+            area: ['60%', '65%'],
+            closeBtn: 1,
+            content: allSql
+        });
     });
-    
+
 });
 
 //-------自定义方法start-------
